@@ -19,8 +19,20 @@ const Contact = () => {
         e.preventDefault();
         setLoading(true);
         setStatus({ type: '', message: '' });
+        
+        const backendUrl = import.meta.env.VITE_BACK_END_BASEURL;
+        
+        if (!backendUrl) {
+            setStatus({
+                type: 'error',
+                message: 'Backend URL is not configured. Please contact the site administrator.',
+            });
+            setLoading(false);
+            return;
+        }
+        
         try {
-            const res = await axios.post(`${import.meta.env.VITE_BACK_END_BASEURL}/api/contact`, formData);
+            const res = await axios.post(`${backendUrl}/api/contact`, formData);
             setStatus({ type: 'success', message: res.data.message });
             setFormData({ name: '', email: '', subject: '', message: '' });
         } catch (err) {
