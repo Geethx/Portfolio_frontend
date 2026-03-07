@@ -22,6 +22,9 @@ const Contact = () => {
 
         const backendUrl = import.meta.env.VITE_BACK_END_BASEURL || 'http://localhost:5000';
 
+        // Debug: Log the URL being used (remove in production)
+        console.log('Backend URL:', backendUrl);
+
         if (!backendUrl) {
             setStatus({
                 type: 'error',
@@ -36,6 +39,9 @@ const Contact = () => {
             setStatus({ type: 'success', message: res.data.message });
             setFormData({ name: '', email: '', subject: '', message: '' });
         } catch (err) {
+            console.error('Contact form error:', err);
+            console.error('Error details:', err.response?.data);
+
             setStatus({
                 type: 'error',
                 message: err.response?.data?.message || 'Something went wrong. Please try again.',
