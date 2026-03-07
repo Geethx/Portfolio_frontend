@@ -43,19 +43,19 @@ const Navbar = () => {
 
     return (
         <motion.nav
-            className={`fixed top-0 left-0 right-0 z-[1000] py-5 transition-all duration-300 ${isScrolled
-                ? 'py-3 bg-dark-primary/85 backdrop-blur-xl border-b border-glass-border'
+            className={`fixed top-0 left-0 right-0 z-[1000] py-4 md:py-5 transition-all duration-300 ${isScrolled
+                ? 'py-2 md:py-3 bg-dark-primary/85 backdrop-blur-xl border-b border-glass-border'
                 : ''
                 }`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
         >
-            <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
+            <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex items-center justify-between">
                 {/* Logo */}
                 <a
                     href="#intro"
-                    className="font-mono text-[1.4rem] font-bold flex items-center gap-0.5 transition-transform duration-300 hover:scale-105"
+                    className="font-mono text-[1.2rem] sm:text-[1.4rem] font-bold flex items-center gap-0.5 transition-transform duration-300 hover:scale-105"
                     onClick={(e) => handleClick(e, '#intro')}
                 >
                     <span className="text-primary-400">&lt;</span>
@@ -97,7 +97,7 @@ const Navbar = () => {
 
                 {/* Mobile Toggle */}
                 <button
-                    className="flex lg:hidden bg-transparent text-slate-100 text-2xl p-2"
+                    className="flex lg:hidden bg-transparent text-slate-100 text-2xl p-2 -mr-2"
                     onClick={() => setIsMobileOpen(!isMobileOpen)}
                     aria-label="Toggle menu"
                 >
@@ -115,7 +115,7 @@ const Navbar = () => {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <ul className="px-6 py-5 flex flex-col gap-1">
+                        <ul className="px-4 sm:px-6 py-5 flex flex-col gap-1 max-h-[calc(100vh-80px)] overflow-y-auto">
                             {navLinks.map((link, i) => (
                                 <motion.li
                                     key={link.name}
@@ -135,6 +135,21 @@ const Navbar = () => {
                                     </a>
                                 </motion.li>
                             ))}
+                            <motion.li
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: navLinks.length * 0.05 }}
+                                className="mt-3"
+                            >
+                                <a
+                                    href={resume}
+                                    download="Jeewan's Resume"
+                                    className="block text-center px-5 py-3 rounded-full text-sm font-semibold
+                                    gradient-primary text-white shadow-[0_4px_20px_rgba(99,102,241,0.4)]"
+                                >
+                                    Download Resume
+                                </a>
+                            </motion.li>
                         </ul>
                     </motion.div>
                 )}

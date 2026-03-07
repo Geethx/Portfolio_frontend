@@ -43,34 +43,34 @@ const Projects = () => {
     const displayedProjects = showAll ? projects : projects.slice(0, 4);
 
     return (
-        <section id="projects" className="py-16 lg:py-24 relative" ref={ref}>
-            <div className="absolute w-[500px] h-[500px] rounded-full bg-primary-600 top-[30%] -right-[200px] blur-[100px] opacity-15 pointer-events-none -z-1" />
+        <section id="projects" className="py-12 sm:py-16 md:py-20 lg:py-24 relative" ref={ref}>
+            <div className="absolute w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] rounded-full bg-primary-600 top-[30%] -right-[100px] sm:-right-[150px] md:-right-[200px] blur-[80px] md:blur-[100px] opacity-15 pointer-events-none -z-1" />
 
-            <div className="max-w-[1200px] mx-auto px-6">
+            <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
                 {/* Header */}
                 <motion.div
-                    className="text-center mb-16"
+                    className="text-center mb-12 sm:mb-14 md:mb-16"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="inline-block font-mono text-[0.8rem] font-medium text-primary-400 uppercase tracking-[3px] mb-3 px-4 py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full">
+                    <span className="inline-block font-mono text-[0.75rem] sm:text-[0.8rem] font-medium text-primary-400 uppercase tracking-[2px] sm:tracking-[3px] mb-2 sm:mb-3 px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full">
                         Portfolio
                     </span>
-                    <h2 className="text-[clamp(2rem,4vw,2.8rem)] font-extrabold text-gradient leading-tight mb-4">
+                    <h2 className="text-[clamp(1.8rem,6vw,2.8rem)] font-extrabold text-gradient leading-tight mb-3 sm:mb-4">
                         Featured Projects
                     </h2>
-                    <p className="text-[1.05rem] text-slate-400 max-w-[600px] mx-auto leading-[1.7]">
+                    <p className="text-[0.95rem] sm:text-[1.05rem] text-slate-400 max-w-[600px] mx-auto leading-[1.6] sm:leading-[1.7] px-4 sm:px-0">
                         A selection of projects that showcase my skills and experience
                     </p>
                 </motion.div>
 
                 {/* Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                     {displayedProjects.map((project, i) => (
                         <motion.div
                             key={project.title}
-                            className="glass-card glass-card-hover p-7 relative overflow-hidden flex flex-col"
+                            className="glass-card glass-card-hover p-5 sm:p-6 md:p-7 relative overflow-hidden flex flex-col"
                             initial={{ opacity: 0, y: 30 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: i * 0.1 }}
@@ -82,23 +82,23 @@ const Projects = () => {
                                 style={{ background: project.color }}
                             />
 
-                            <div className="flex justify-between items-start mb-3.5">
+                            <div className="flex justify-between items-start mb-3 sm:mb-3.5">
                                 <div>
-                                    <span className="font-mono text-xs font-medium uppercase tracking-wider mb-1.5 block" style={{ color: project.color }}>
+                                    <span className="font-mono text-[0.7rem] sm:text-xs font-medium uppercase tracking-wider mb-1 sm:mb-1.5 block" style={{ color: project.color }}>
                                         {project.type}
                                     </span>
-                                    <h3 className="text-[1.2rem] font-bold leading-[1.3]">{project.title}</h3>
+                                    <h3 className="text-[1.05rem] sm:text-[1.2rem] font-bold leading-[1.3]">{project.title}</h3>
                                 </div>
-                                <span className="font-mono text-xs text-slate-500 shrink-0 pt-1">{project.year}</span>
+                                <span className="font-mono text-[0.7rem] sm:text-xs text-slate-500 shrink-0 pt-1">{project.year}</span>
                             </div>
 
-                            <p className="text-slate-400 text-[0.9rem] leading-[1.7] mb-5 flex-1">{project.description}</p>
+                            <p className="text-slate-400 text-[0.85rem] sm:text-[0.9rem] leading-[1.6] sm:leading-[1.7] mb-4 sm:mb-5 flex-1">{project.description}</p>
 
-                            <div className="flex flex-wrap gap-2 mb-5">
+                            <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-5">
                                 {project.tech.map((t) => (
                                     <span
                                         key={t}
-                                        className="text-xs font-medium font-mono px-3 py-1 border rounded-full"
+                                        className="text-[0.7rem] sm:text-xs font-medium font-mono px-2.5 sm:px-3 py-0.5 sm:py-1 border rounded-full"
                                         style={{ borderColor: `${project.color}44`, color: project.color }}
                                     >
                                         {t}
@@ -106,15 +106,15 @@ const Projects = () => {
                                 ))}
                             </div>
 
-                            <div className="flex gap-4 pt-4 border-t border-glass-border">
+                            <div className="flex gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-glass-border">
                                 {project.github && (
-                                    <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[0.85rem] font-medium text-slate-400 hover:text-primary-400 transition-colors duration-300">
-                                        <FiGithub /> Code
+                                    <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-1 sm:gap-1.5 text-[0.8rem] sm:text-[0.85rem] font-medium text-slate-400 hover:text-primary-400 transition-colors duration-300">
+                                        <FiGithub /> <span>Code</span>
                                     </a>
                                 )}
                                 {project.live && (
-                                    <a href={project.live} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-[0.85rem] font-medium transition-colors duration-300" style={{ color: project.color }}>
-                                        <FiExternalLink /> Live Demo
+                                    <a href={project.live} target="_blank" rel="noreferrer" className="flex items-center gap-1 sm:gap-1.5 text-[0.8rem] sm:text-[0.85rem] font-medium transition-colors duration-300" style={{ color: project.color }}>
+                                        <FiExternalLink /> <span>Live Demo</span>
                                     </a>
                                 )}
                             </div>
@@ -124,13 +124,13 @@ const Projects = () => {
 
                 {!showAll && projects.length > 4 && (
                     <motion.div
-                        className="flex justify-center mt-10"
+                        className="flex justify-center mt-8 sm:mt-10"
                         initial={{ opacity: 0 }}
                         animate={isInView ? { opacity: 1 } : {}}
                         transition={{ delay: 0.5 }}
                     >
                         <button
-                            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-[0.95rem] font-semibold
+                            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-[0.85rem] sm:text-[0.95rem] font-semibold
                 bg-transparent text-slate-100 border-[1.5px] border-glass-border
                 hover:border-primary-500 hover:bg-primary-500/10 hover:-translate-y-0.5 transition-all duration-300"
                             onClick={() => setShowAll(true)}

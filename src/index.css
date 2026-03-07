@@ -49,6 +49,7 @@
     color: #f1f5f9;
     line-height: 1.7;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   a {
@@ -214,5 +215,40 @@
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* ===== Responsive Enhancements ===== */
+/* Mobile-first responsive utilities */
+@media (max-width: 640px) {
+  .glass-card {
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+  .bg-grid {
+    background-size: 40px 40px;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (hover: none) and (pointer: coarse) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent text from being too small on mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Improve readability on tablets */
+@media (min-width: 641px) and (max-width: 1024px) {
+  body {
+    font-size: 17px;
   }
 }

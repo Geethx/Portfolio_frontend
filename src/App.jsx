@@ -21,11 +21,11 @@ function App() {
   if (isLoading) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-dark-primary z-9999">
-        <div className="relative w-30 h-30 flex items-center justify-center">
+        <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-30 md:h-30 flex items-center justify-center">
           <div className="loader-ring absolute inset-0 rounded-full border-2 border-transparent"></div>
           <div className="loader-ring absolute inset-0 rounded-full border-2 border-transparent"></div>
           <div className="loader-ring absolute inset-0 rounded-full border-2 border-transparent"></div>
-          <span className="font-mono text-xl font-bold text-gradient">JG</span>
+          <span className="font-mono text-lg sm:text-xl font-bold text-gradient">JG</span>
         </div>
       </div>
     );

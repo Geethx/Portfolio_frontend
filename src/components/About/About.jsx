@@ -20,62 +20,62 @@ const About = () => {
     const isInView = useInView(ref, { once: true, margin: '-100px' });
 
     return (
-        <section id="about" className="py-16 lg:py-24 relative" ref={ref}>
-            <div className="max-w-[1200px] mx-auto px-6">
+        <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24 relative" ref={ref}>
+            <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
                 {/* Header */}
                 <motion.div
-                    className="text-center mb-16"
+                    className="text-center mb-12 sm:mb-14 md:mb-16"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="inline-block font-mono text-[0.8rem] font-medium text-primary-400 uppercase tracking-[3px] mb-3 px-4 py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full">
+                    <span className="inline-block font-mono text-[0.75rem] sm:text-[0.8rem] font-medium text-primary-400 uppercase tracking-[2px] sm:tracking-[3px] mb-2 sm:mb-3 px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full">
                         About Me
                     </span>
-                    <h2 className="text-[clamp(2rem,4vw,2.8rem)] font-extrabold text-gradient leading-tight mb-4">
+                    <h2 className="text-[clamp(1.8rem,6vw,2.8rem)] font-extrabold text-gradient leading-tight mb-3 sm:mb-4">
                         Who I Am
                     </h2>
-                    <p className="text-[1.05rem] text-slate-400 max-w-[600px] mx-auto leading-[1.7]">
+                    <p className="text-[0.95rem] sm:text-[1.05rem] text-slate-400 max-w-[600px] mx-auto leading-[1.6] sm:leading-[1.7] px-4 sm:px-0">
                         A passionate developer turning ideas into elegant digital solutions
                     </p>
                 </motion.div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-[60px] items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 sm:gap-10 md:gap-12 lg:gap-[60px] items-start">
                     {/* Text */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <h3 className="text-[1.8rem] font-extrabold mb-5 leading-[1.3]">
+                        <h3 className="text-[1.4rem] sm:text-[1.6rem] md:text-[1.8rem] font-extrabold mb-4 sm:mb-5 leading-[1.3]">
                             Crafting <span className="text-gradient">Digital Experiences</span> with Modern Tech
                         </h3>
-                        <p className="text-slate-400 mb-4 text-[0.98rem] leading-[1.8]">
+                        <p className="text-slate-400 mb-3 sm:mb-4 text-[0.9rem] sm:text-[0.98rem] leading-[1.7] sm:leading-[1.8]">
                             I'm an IT undergraduate at the <strong className="text-slate-100 font-semibold">University of Moratuwa</strong> with
                             a strong foundation in Software Development and expertise in Emerging Technologies.
-                            I'm proficient in building full-stack applications and passionate about 
+                            I'm proficient in building full-stack applications and passionate about
                             <strong className="text-slate-100 font-semibold"> Artificial Intelligence, Machine Learning, and DevOps</strong> to
                             drive innovative solutions.
                         </p>
-                        <p className="text-slate-400 mb-4 text-[0.98rem] leading-[1.8]">
+                        <p className="text-slate-400 mb-3 sm:mb-4 text-[0.9rem] sm:text-[0.98rem] leading-[1.7] sm:leading-[1.8]">
                             With experience across academic projects, internships, and client projects, I've developed
                             responsive web applications, e-commerce platforms, Generative AI applications and IoT-based systems.
                         </p>
 
                         {/* Stats */}
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-8">
                             {stats.map((stat, i) => (
                                 <motion.div
                                     key={stat.label}
-                                    className="text-center p-5 bg-surface-1 border border-glass-border rounded-xl
+                                    className="text-center p-4 sm:p-5 bg-surface-1 border border-glass-border rounded-xl
                     transition-all duration-300 hover:border-primary-500 hover:bg-primary-500/5 hover:-translate-y-[3px]"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ delay: 0.4 + i * 0.1 }}
                                 >
-                                    <span className="block text-[1.6rem] font-extrabold text-gradient mb-1">{stat.number}</span>
-                                    <span className="text-[0.78rem] text-slate-500 uppercase tracking-wider font-medium">{stat.label}</span>
+                                    <span className="block text-[1.4rem] sm:text-[1.6rem] font-extrabold text-gradient mb-1">{stat.number}</span>
+                                    <span className="text-[0.7rem] sm:text-[0.78rem] text-slate-500 uppercase tracking-wider font-medium">{stat.label}</span>
                                 </motion.div>
                             ))}
                         </div>
@@ -83,7 +83,7 @@ const About = () => {
 
                     {/* Highlight Cards */}
                     <motion.div
-                        className="flex flex-col gap-4"
+                        className="flex flex-col gap-3 sm:gap-4"
                         initial={{ opacity: 0, x: 30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.3 }}
@@ -91,18 +91,18 @@ const About = () => {
                         {highlights.map((item, i) => (
                             <motion.div
                                 key={item.title}
-                                className="glass-card glass-card-hover flex items-center gap-4 p-5 px-6"
+                                className="glass-card glass-card-hover flex items-center gap-3 sm:gap-4 p-4 sm:p-5 px-5 sm:px-6"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ delay: 0.4 + i * 0.1 }}
                                 whileHover={{ scale: 1.02 }}
                             >
-                                <div className="w-12 h-12 min-w-[48px] flex items-center justify-center bg-primary-500/10 border border-primary-500/20 rounded-xl text-primary-400 text-xl">
+                                <div className="w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] sm:min-w-[48px] flex items-center justify-center bg-primary-500/10 border border-primary-500/20 rounded-xl text-primary-400 text-lg sm:text-xl">
                                     {item.icon}
                                 </div>
                                 <div>
-                                    <h4 className="text-[0.95rem] font-bold mb-1">{item.title}</h4>
-                                    <p className="text-[0.85rem] text-slate-400">{item.desc}</p>
+                                    <h4 className="text-[0.9rem] sm:text-[0.95rem] font-bold mb-0.5 sm:mb-1">{item.title}</h4>
+                                    <p className="text-[0.8rem] sm:text-[0.85rem] text-slate-400">{item.desc}</p>
                                 </div>
                             </motion.div>
                         ))}
