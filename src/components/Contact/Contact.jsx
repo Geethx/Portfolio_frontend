@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { FiSend, FiMail, FiPhone, FiMapPin, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -20,7 +20,7 @@ const Contact = () => {
         setLoading(true);
         setStatus({ type: '', message: '' });
 
-        const backendUrl = import.meta.env.VITE_BACK_END_BASEURL || 'http://localhost:5000/api';
+        const backendUrl = import.meta.env.VITE_BACK_END_BASEURL || 'http://localhost:5000';
 
         if (!backendUrl) {
             setStatus({
