@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { FiSend, FiMail, FiPhone, FiMapPin, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -20,7 +20,7 @@ const Contact = () => {
         setLoading(true);
         setStatus({ type: '', message: '' });
         try {
-            const res = await axios.post('http://localhost:5000/api/contact', formData);
+            const res = await axios.post(`${import.meta.env.VITE_BACK_END_BASEURL}/api/contact`, formData);
             setStatus({ type: 'success', message: res.data.message });
             setFormData({ name: '', email: '', subject: '', message: '' });
         } catch (err) {
@@ -40,9 +40,9 @@ const Contact = () => {
 
     return (
         <section id="contact" className="py-16 lg:py-24 relative" ref={ref}>
-            <div className="absolute w-[500px] h-[500px] rounded-full bg-primary-600 -bottom-[200px] -right-[200px] blur-[100px] opacity-15 pointer-events-none -z-1" />
+            <div className="absolute w-125 h-125 rounded-full bg-primary-600 -bottom-50 -right-50 blur-[100px] opacity-15 pointer-events-none -z-1" />
 
-            <div className="max-w-[1200px] mx-auto px-6">
+            <div className="max-w-300 mx-auto px-6">
                 {/* Header */}
                 <motion.div
                     className="text-center mb-16"
@@ -56,7 +56,7 @@ const Contact = () => {
                     <h2 className="text-[clamp(2rem,4vw,2.8rem)] font-extrabold text-gradient leading-tight mb-4">
                         Get In Touch
                     </h2>
-                    <p className="text-[1.05rem] text-slate-400 max-w-[600px] mx-auto leading-[1.7]">
+                    <p className="text-[1.05rem] text-slate-400 max-w-150 mx-auto leading-[1.7]">
                         Have a project in mind or want to collaborate? Let's talk!
                     </p>
                 </motion.div>
@@ -84,7 +84,7 @@ const Contact = () => {
                                 { icon: <FiMapPin />, label: 'Location', value: 'Sri Lanka' },
                             ].map((d) => (
                                 <div key={d.label} className="flex items-center gap-4">
-                                    <div className="w-12 h-12 min-w-[48px] flex items-center justify-center bg-primary-500/10 border border-primary-500/20 rounded-xl text-primary-400 text-lg">
+                                    <div className="w-12 h-12 min-w-12 flex items-center justify-center bg-primary-500/10 border border-primary-500/20 rounded-xl text-primary-400 text-lg">
                                         {d.icon}
                                     </div>
                                     <div>
@@ -114,7 +114,7 @@ const Contact = () => {
                                     rel="noreferrer"
                                     className="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-2 border border-glass-border
                     text-slate-400 text-xl transition-all duration-300
-                    hover:text-primary-400 hover:border-primary-500 hover:bg-primary-500/10 hover:-translate-y-[3px]"
+                    hover:text-primary-400 hover:border-primary-500 hover:bg-primary-500/10 hover:-translate-y-0.75"
                                 >
                                     {s.icon}
                                 </a>
@@ -148,7 +148,7 @@ const Contact = () => {
 
                         <div className="mb-5">
                             <label htmlFor="message" className="block text-[0.82rem] font-semibold text-slate-400 mb-2 uppercase tracking-wider">Message</label>
-                            <textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Tell me about..." required rows={5} className={`${inputClasses} resize-y min-h-[120px]`} />
+                            <textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Tell me about..." required rows={5} className={`${inputClasses} resize-y min-h-30`} />
                         </div>
 
                         {status.message && (
@@ -171,7 +171,7 @@ const Contact = () => {
                         >
                             {loading ? (
                                 <>
-                                    <span className="w-[18px] h-[18px] border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                    <span className="w-4.5 h-4.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                                     Sending...
                                 </>
                             ) : (
