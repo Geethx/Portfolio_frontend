@@ -247,8 +247,13 @@
 }
 
 /* Improve readability on tablets */
+/* Tablet responsive */
 @media (min-width: 641px) and (max-width: 1024px) {
   body {
-    font-size: 17px;
+    font-size: 16px;
+  }
+
+  .bg-grid {
+    background-size: 35px 35px;
   }
 }

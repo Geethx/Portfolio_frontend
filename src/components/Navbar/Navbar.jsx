@@ -43,19 +43,19 @@ const Navbar = () => {
 
     return (
         <motion.nav
-            className={`fixed top-0 left-0 right-0 z-[1000] py-4 md:py-5 transition-all duration-300 ${isScrolled
-                ? 'py-2 md:py-3 bg-dark-primary/85 backdrop-blur-xl border-b border-glass-border'
+            className={`fixed top-0 left-0 right-0 z-[1000] py-3 sm:py-4 md:py-5 transition-all duration-300 ${isScrolled
+                ? 'py-2 md:py-3 bg-dark-primary/90 backdrop-blur-xl border-b border-glass-border shadow-lg'
                 : ''
                 }`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
         >
-            <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-6 flex items-center justify-between">
                 {/* Logo */}
                 <a
                     href="#intro"
-                    className="font-mono text-[1.2rem] sm:text-[1.4rem] font-bold flex items-center gap-0.5 transition-transform duration-300 hover:scale-105"
+                    className="font-mono text-[1.1rem] sm:text-[1.3rem] font-bold flex items-center gap-0.5 transition-transform duration-300 hover:scale-105 z-50"
                     onClick={(e) => handleClick(e, '#intro')}
                 >
                     <span className="text-primary-400">&lt;</span>

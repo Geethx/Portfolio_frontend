@@ -9,19 +9,19 @@ const Footer = () => {
         <footer className="relative z-1 border-t border-glass-border bg-dark-primary/80 backdrop-blur-xl">
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
                 {/* Top */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.5fr_1fr_1fr] gap-8 sm:gap-10 md:gap-12 py-12 sm:py-14 md:py-[60px]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.5fr_1fr_1fr] gap-6 sm:gap-8 md:gap-10 py-10 sm:py-12 md:py-14">
                     {/* Brand */}
                     <div>
                         <a
                             href="#home"
-                            className="font-mono text-[1.2rem] sm:text-[1.4rem] font-bold inline-flex items-center gap-0.5 mb-2 sm:mb-3"
+                            className="font-mono text-[1.1rem] sm:text-[1.3rem] font-bold inline-flex items-center gap-0.5 mb-2 sm:mb-3"
                             onClick={(e) => { e.preventDefault(); scrollToTop(); }}
                         >
                             <span className="text-primary-400">&lt;</span>
                             <span className="text-gradient">JG</span>
                             <span className="text-primary-400"> /&gt;</span>
                         </a>
-                        <p className="text-slate-400 text-[0.85rem] sm:text-[0.9rem] max-w-[300px]">
+                        <p className="text-slate-400 text-[0.8rem] sm:text-[0.85rem] max-w-[300px]">
                             Building digital experiences with modern technologies
                         </p>
                     </div>

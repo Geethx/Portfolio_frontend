@@ -57,36 +57,36 @@ const Contact = () => {
     focus:border-primary-500 focus:bg-primary-500/5 focus:ring-[3px] focus:ring-primary-500/10`;
 
     return (
-        <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 relative" ref={ref}>
-            <div className="absolute w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] rounded-full bg-primary-600 -bottom-[150px] sm:-bottom-[200px] -right-[150px] sm:-right-[200px] blur-[80px] md:blur-[100px] opacity-15 pointer-events-none -z-1" />
+        <section id="contact" className="py-10 sm:py-14 md:py-18 lg:py-20 relative" ref={ref}>
+            <div className="absolute w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px] rounded-full bg-primary-600 -bottom-[150px] sm:-bottom-[200px] -right-[150px] sm:-right-[200px] blur-[80px] md:blur-[100px] opacity-15 pointer-events-none -z-1" />
 
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
                 {/* Header */}
                 <motion.div
-                    className="text-center mb-12 sm:mb-14 md:mb-16"
+                    className="text-center mb-8 sm:mb-10 md:mb-12"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="inline-block font-mono text-[0.75rem] sm:text-[0.8rem] font-medium text-primary-400 uppercase tracking-[2px] sm:tracking-[3px] mb-2 sm:mb-3 px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full">
+                    <span className="inline-block font-mono text-[0.7rem] sm:text-[0.75rem] font-medium text-primary-400 uppercase tracking-[2px] sm:tracking-[3px] mb-2 sm:mb-3 px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full">
                         Contact
                     </span>
-                    <h2 className="text-[clamp(1.8rem,6vw,2.8rem)] font-extrabold text-gradient leading-tight mb-3 sm:mb-4">
+                    <h2 className="text-[clamp(1.6rem,7vw,2.8rem)] font-extrabold text-gradient leading-tight mb-2 sm:mb-3">
                         Get In Touch
                     </h2>
-                    <p className="text-[0.95rem] sm:text-[1.05rem] text-slate-400 max-w-[600px] mx-auto leading-[1.6] sm:leading-[1.7] px-4 sm:px-0">
+                    <p className="text-[0.875rem] sm:text-[0.95rem] md:text-[1.05rem] text-slate-400 max-w-[600px] mx-auto leading-[1.6] sm:leading-[1.7] px-4 sm:px-2 md:px-0">
                         Have a project in mind or want to collaborate? Let's talk!
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-8 sm:gap-10 md:gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-6 sm:gap-8 md:gap-10 items-start">
                     {/* Info */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ delay: 0.2 }}
                     >
-                        <h3 className="text-[1.3rem] sm:text-[1.5rem] md:text-[1.6rem] font-extrabold mb-3 sm:mb-4 leading-[1.3]">
+                        <h3 className="text-[1.2rem] sm:text-[1.4rem] md:text-[1.5rem] font-extrabold mb-3 sm:mb-4 leading-[1.3]">
                             Let's build something <span className="text-gradient">amazing</span> together
                         </h3>
                         <p className="text-slate-400 text-[0.9rem] sm:text-[0.95rem] leading-[1.6] sm:leading-[1.7] mb-6 sm:mb-8">
