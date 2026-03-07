@@ -20,8 +20,8 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-dark-primary z-[9999]">
-        <div className="relative w-[120px] h-[120px] flex items-center justify-center">
+      <div className="fixed inset-0 flex items-center justify-center bg-dark-primary z-9999">
+        <div className="relative w-30 h-30 flex items-center justify-center">
           <div className="loader-ring absolute inset-0 rounded-full border-2 border-transparent"></div>
           <div className="loader-ring absolute inset-0 rounded-full border-2 border-transparent"></div>
           <div className="loader-ring absolute inset-0 rounded-full border-2 border-transparent"></div>
