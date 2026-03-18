@@ -43,9 +43,9 @@ const Navbar = () => {
 
     return (
         <motion.nav
-            className={`fixed top-0 left-0 right-0 z-[1000] py-3 sm:py-4 md:py-5 transition-all duration-300 ${isScrolled
-                ? 'py-2 md:py-3 bg-dark-primary/90 backdrop-blur-xl border-b border-glass-border shadow-lg'
-                : ''
+            className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${isScrolled
+                ? 'py-2 sm:py-3 md:py-3 bg-dark-primary/95 backdrop-blur-xl border-b border-glass-border shadow-lg'
+                : 'py-3 sm:py-4 md:py-5 bg-dark-primary/80 backdrop-blur-md border-b border-glass-border/30 lg:bg-transparent lg:backdrop-blur-none lg:border-transparent'
                 }`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
@@ -55,11 +55,11 @@ const Navbar = () => {
                 {/* Logo */}
                 <a
                     href="#intro"
-                    className="font-mono text-[1.1rem] sm:text-[1.3rem] font-bold flex items-center gap-0.5 transition-transform duration-300 hover:scale-105 z-50"
+                    className="font-mono text-[1.1rem] sm:text-[1.3rem] font-bold flex items-center gap-0.5 transition-transform duration-300 hover:scale-105 z-50 relative"
                     onClick={(e) => handleClick(e, '#intro')}
                 >
                     <span className="text-primary-400">&lt;</span>
-                    <span className="text-gradient">JG</span>
+                    <span className="text-gradient drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]">JG</span>
                     <span className="text-primary-400"> /&gt;</span>
                 </a>
 
@@ -97,7 +97,7 @@ const Navbar = () => {
 
                 {/* Mobile Toggle */}
                 <button
-                    className="flex lg:hidden bg-transparent text-slate-100 text-2xl p-2 -mr-2"
+                    className="flex lg:hidden items-center justify-center w-10 h-10 bg-primary-500/20 border border-primary-500/30 text-white text-2xl rounded-lg hover:bg-primary-500/30 hover:border-primary-500/50 transition-all duration-300 z-50 active:scale-95"
                     onClick={() => setIsMobileOpen(!isMobileOpen)}
                     aria-label="Toggle menu"
                 >
@@ -109,7 +109,7 @@ const Navbar = () => {
             <AnimatePresence>
                 {isMobileOpen && (
                     <motion.div
-                        className="overflow-hidden bg-dark-primary/95 backdrop-blur-xl border-t border-glass-border"
+                        className="overflow-hidden bg-dark-primary/98 backdrop-blur-xl border-t border-glass-border shadow-xl"
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}

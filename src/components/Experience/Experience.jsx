@@ -1,8 +1,20 @@
-import { motion, useInView } from 'framer-motion';
+import { motion as Motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FiBriefcase, FiCalendar } from 'react-icons/fi';
 
 const experiences = [
+    {
+        role: 'Software Engineer (Internship)',
+        company: 'AIT Services Australia',
+        period: 'March 2026 - Aug 2026',
+        description: [
+            'Contributed to the development of a web-based application using newest technologies',
+            'Implemented new features and optimized existing code for better performance',
+            'Collaborated with a team of developers',
+        ],
+        type: 'Full-time',
+        color: '#ef4444',
+    },
     {
         role: 'Frontend Developer',
         company: 'Beddle Hub',
@@ -46,10 +58,10 @@ const Experience = () => {
     const isInView = useInView(ref, { once: true, margin: '-100px' });
 
     return (
-        <section id="experience" className="py-10 sm:py-14 md:py-18 lg:py-20 relative" ref={ref}>
-            <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <section id="experience" className="py-10 sm:py-14 md:py-16 lg:py-20 relative" ref={ref}>
+            <div className="max-w-300 mx-auto px-4 sm:px-6">
                 {/* Header */}
-                <motion.div
+                <Motion.div
                     className="text-center mb-8 sm:mb-10 md:mb-12"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -61,27 +73,27 @@ const Experience = () => {
                     <h2 className="text-[clamp(1.6rem,7vw,2.8rem)] font-extrabold text-gradient leading-tight mb-2 sm:mb-3">
                         Professional Experience
                     </h2>
-                    <p className="text-[0.875rem] sm:text-[0.95rem] md:text-[1.05rem] text-slate-400 max-w-[600px] mx-auto leading-[1.6] sm:leading-[1.7] px-4 sm:px-2 md:px-0">
+                    <p className="text-[0.875rem] sm:text-[0.95rem] md:text-[1.05rem] text-slate-400 max-w-150 mx-auto leading-[1.6] sm:leading-[1.7] px-4 sm:px-2 md:px-0">
                         My journey through different roles and organizations
                     </p>
-                </motion.div>
+                </Motion.div>
 
                 {/* Timeline */}
-                <div className="relative max-w-[800px] mx-auto">
+                <div className="relative max-w-200 mx-auto">
                     {/* Timeline line */}
-                    <div className="absolute left-4 sm:left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-600 via-emerald-500 to-transparent" />
+                    <div className="absolute left-4 sm:left-5 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary-600 via-emerald-500 to-transparent" />
 
                     {experiences.map((exp, i) => (
-                        <motion.div
+                        <Motion.div
                             key={`${exp.company}-${exp.role}`}
-                            className="relative pl-12 sm:pl-[60px] mb-8 sm:mb-10 last:mb-0"
+                            className="relative pl-12 sm:pl-15 mb-8 sm:mb-10 last:mb-0"
                             initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
                             animate={isInView ? { opacity: 1, x: 0 } : {}}
                             transition={{ delay: i * 0.2 }}
                         >
                             {/* Dot */}
                             <div
-                                className="absolute left-[11px] sm:left-[13px] top-6 sm:top-7 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full z-2 ring-2 ring-white/10"
+                                className="absolute left-2.75 sm:left-3.25 top-6 sm:top-7 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full z-10 ring-2 ring-white/10"
                                 style={{ background: exp.color, boxShadow: `0 0 20px ${exp.color}44` }}
                             />
 
@@ -106,14 +118,14 @@ const Experience = () => {
 
                                 <ul className="flex flex-col gap-1.5 sm:gap-2">
                                     {exp.description.map((item, j) => (
-                                        <li key={j} className="flex items-start gap-2 sm:gap-2.5 text-[0.82rem] sm:text-[0.88rem] text-slate-400 leading-[1.5] sm:leading-[1.6]">
-                                            <span className="w-1.5 h-1.5 min-w-[6px] rounded-full mt-1.5 sm:mt-2" style={{ background: exp.color }} />
+                                        <li key={j} className="flex items-start gap-2 sm:gap-2.5 text-[0.82rem] sm:text-[0.88rem] text-slate-400 leading-normal sm:leading-[1.6]">
+                                            <span className="w-1.5 h-1.5 min-w-1.5 rounded-full mt-1.5 sm:mt-2" style={{ background: exp.color }} />
                                             {item}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-                        </motion.div>
+                        </Motion.div>
                     ))}
                 </div>
             </div>
