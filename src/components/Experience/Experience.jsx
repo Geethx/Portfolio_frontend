@@ -6,7 +6,7 @@ const experiences = [
     {
         role: 'Software Engineer (Internship)',
         company: 'AIT Services Australia',
-        period: 'March 2026 - Aug 2026',
+        period: 'March 2026 - Present',
         description: [
             'Contributed to the development of a web-based application using newest technologies',
             'Implemented new features and optimized existing code for better performance',
