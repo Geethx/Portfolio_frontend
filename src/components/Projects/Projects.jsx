@@ -55,7 +55,7 @@ const Projects = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <span className="inline-block font-mono text-[0.7rem] sm:text-[0.75rem] font-medium text-primary-400 uppercase tracking-[2px] sm:tracking-[3px] mb-2 sm:mb-3 px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full">
-                        Portfolio
+                        Projects
                     </span>
                     <h2 className="text-[clamp(1.6rem,7vw,2.8rem)] font-extrabold text-gradient leading-tight mb-2 sm:mb-3">
                         Featured Projects
