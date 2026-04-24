@@ -44,17 +44,7 @@ const projects = [
         tech: ['Arduino C++', 'React.js', 'Node.js', 'MySQL', 'Firebase'],
         github: 'https://github.com/Hardware-project-group',
         color: '#8b5cf6',
-    },
-    {
-        title: 'StockSync - Warehouse Management',
-        type: 'Group Project',
-        year: '2023-2024',
-        description: 'An IoT-based intelligent warehouse management system built on ESP32 microcontrollers that integrated biometric, RFID, and IR sensors for real-time security and monitoring with Keypad Switch Module and LCD Display.',
-        tech: ['Arduino C++', 'React.js', 'Node.js', 'MySQL', 'Firebase'],
-        github: 'https://github.com/Hardware-project-group',
-        color: '#8b5cf6',
-    },
-
+    }
 ];
 
 const Projects = () => {
