@@ -4,6 +4,17 @@ import { FiExternalLink, FiGithub, FiChevronRight } from 'react-icons/fi';
 
 const projects = [
     {
+        title: 'Learning Management System',
+        type: 'Individual Project',
+        year: '2026',
+        description: 'Developed an online quiz web application with secure user login, quiz management, question management, review questions, answer tracking. Built admin features for quiz moderation, result tracking',
+        tech: ['React', 'Spring Boot', 'Supabase', 'Frontend deployed in vercel', 'Backend deployed in Railway'],
+        live: 'https://studysprintonline.vercel.app',
+        Backend: 'https://github.com/Geethx/Online_Quiz_System_Backend',
+        Frontend: 'https://github.com/Geethx/Online_Quiz_System_Frontend',
+        color: '#8b5cf6',
+    },
+    {
         title: 'E-Commerce Web Application',
         type: 'Individual Project',
         year: '2025',
@@ -34,6 +45,16 @@ const projects = [
         github: 'https://github.com/Hardware-project-group',
         color: '#8b5cf6',
     },
+    {
+        title: 'StockSync - Warehouse Management',
+        type: 'Group Project',
+        year: '2023-2024',
+        description: 'An IoT-based intelligent warehouse management system built on ESP32 microcontrollers that integrated biometric, RFID, and IR sensors for real-time security and monitoring with Keypad Switch Module and LCD Display.',
+        tech: ['Arduino C++', 'React.js', 'Node.js', 'MySQL', 'Firebase'],
+        github: 'https://github.com/Hardware-project-group',
+        color: '#8b5cf6',
+    },
+
 ];
 
 const Projects = () => {
@@ -106,8 +127,17 @@ const Projects = () => {
                                 ))}
                             </div>
 
-                            <div className="flex gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-glass-border">
-                                {project.github && (
+                            <div className="flex flex-wrap gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-glass-border">
+                                {project.Backend && project.Frontend ? (
+                                    <>
+                                        <a href={project.Frontend} target="_blank" rel="noreferrer" className="flex items-center gap-1 sm:gap-1.5 text-[0.8rem] sm:text-[0.85rem] font-medium text-slate-400 hover:text-primary-400 transition-colors duration-300">
+                                            <FiGithub /> <span>Frontend</span>
+                                        </a>
+                                        <a href={project.Backend} target="_blank" rel="noreferrer" className="flex items-center gap-1 sm:gap-1.5 text-[0.8rem] sm:text-[0.85rem] font-medium text-slate-400 hover:text-primary-400 transition-colors duration-300">
+                                            <FiGithub /> <span>Backend</span>
+                                        </a>
+                                    </>
+                                ) : project.github && (
                                     <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-1 sm:gap-1.5 text-[0.8rem] sm:text-[0.85rem] font-medium text-slate-400 hover:text-primary-400 transition-colors duration-300">
                                         <FiGithub /> <span>Code</span>
                                     </a>
