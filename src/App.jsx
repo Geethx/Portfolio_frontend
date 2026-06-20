@@ -47,7 +47,7 @@ function App() {
       <main>
         <Hero />
         
-        <Marquee text="SOFTWARE ENGINEER . WEB DEVELOPER . PROBLEM SOLVER" />
+        <Marquee text="SOFTWARE DESIGNER . WEB DEVELOPER . AI/ML ENGINEER" />
         
         <About />
         
