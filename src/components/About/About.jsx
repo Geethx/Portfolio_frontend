@@ -76,32 +76,6 @@ const About = () => {
                             ))}
                         </div>
                     </motion.div>
-
-                    {/* Highlight Cards */}
-                    <motion.div
-                        className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                    >
-                        {highlights.map((item, i) => (
-                            <motion.div
-                                key={item.title}
-                                className="brutalist-card flex flex-col gap-4 p-6 brutalist-card-hover group cursor-pointer"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ delay: 0.4 + i * 0.1 }}
-                            >
-                                <div className="w-16 h-16 flex items-center justify-center bg-brand-black border-2 border-brand-white text-brand-white text-3xl group-hover:bg-brand-blue group-hover:text-brand-white group-hover:border-brand-blue transition-all">
-                                    {item.icon}
-                                </div>
-                                <div>
-                                    <h4 className="font-display text-xl font-bold mb-2 uppercase">{item.title}</h4>
-                                    <p className="font-mono text-sm uppercase">{item.desc}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
                 </div>
             </div>
         </section>
