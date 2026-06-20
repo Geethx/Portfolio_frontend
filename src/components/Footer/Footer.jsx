@@ -1,4 +1,4 @@
-import { FiGithub, FiLinkedin, FiMail, FiHeart, FiArrowUp } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiArrowUp } from 'react-icons/fi';
 
 const Footer = () => {
     const scrollToTop = () => {
@@ -6,35 +6,34 @@ const Footer = () => {
     };
 
     return (
-        <footer className="relative z-1 border-t border-glass-border bg-dark-primary/80 backdrop-blur-xl">
-            <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <footer className="relative z-10 border-t-4 border-brand-white bg-brand-blue text-brand-white">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
                 {/* Top */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.5fr_1fr_1fr] gap-6 sm:gap-8 md:gap-10 py-10 sm:py-12 md:py-14">
+                <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-10 py-12 md:py-16">
                     {/* Brand */}
                     <div>
                         <a
                             href="#home"
-                            className="font-mono text-[1.1rem] sm:text-[1.3rem] font-bold inline-flex items-center gap-0.5 mb-2 sm:mb-3"
+                            className="font-display text-2xl font-bold inline-flex items-center gap-2 mb-4 uppercase"
                             onClick={(e) => { e.preventDefault(); scrollToTop(); }}
                         >
-                            <span className="text-primary-400">&lt;</span>
-                            <span className="text-gradient">JG</span>
-                            <span className="text-primary-400"> /&gt;</span>
+                            <span className="bg-brand-black text-brand-white px-2 py-1 border-2 border-brand-white">JG</span>
+                            <span className="text-brand-black">/ SYSTEM</span>
                         </a>
-                        <p className="text-slate-400 text-[0.8rem] sm:text-[0.85rem] max-w-[300px]">
-                            Building digital experiences with modern technologies
+                        <p className="font-mono text-sm font-bold uppercase max-w-[300px] text-brand-black">
+                            BUILDING DIGITAL EXPERIENCES WITH MODERN TECHNOLOGIES
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-[0.75rem] sm:text-[0.82rem] font-semibold uppercase tracking-[1.5px] text-slate-500 mb-3 sm:mb-4">Quick Links</h4>
-                        <nav className="flex flex-col gap-2 sm:gap-2.5">
+                        <h4 className="font-display text-lg font-bold uppercase text-brand-black mb-6 border-b-2 border-brand-black pb-2 inline-block">SYSTEM LINKS</h4>
+                        <nav className="flex flex-col gap-3">
                             {['About', 'Skills', 'Projects', 'Experience', 'Contact'].map((link) => (
                                 <a
                                     key={link}
                                     href={`#${link.toLowerCase()}`}
-                                    className="text-[0.85rem] sm:text-[0.9rem] text-slate-400 w-fit transition-all duration-300 hover:text-primary-400 hover:translate-x-1"
+                                    className="font-mono text-sm font-bold uppercase w-fit transition-colors hover:text-brand-black hover:bg-brand-white px-2 py-1 border-2 border-transparent hover:border-brand-black"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         document.querySelector(`#${link.toLowerCase()}`)?.scrollIntoView({ behavior: 'smooth' });
@@ -48,8 +47,8 @@ const Footer = () => {
 
                     {/* Connect */}
                     <div>
-                        <h4 className="text-[0.75rem] sm:text-[0.82rem] font-semibold uppercase tracking-[1.5px] text-slate-500 mb-3 sm:mb-4">Connect</h4>
-                        <div className="flex gap-2 sm:gap-2.5">
+                        <h4 className="font-display text-lg font-bold uppercase text-brand-black mb-6 border-b-2 border-brand-black pb-2 inline-block">NETWORK</h4>
+                        <div className="flex gap-4">
                             {[
                                 { icon: <FiGithub />, href: 'https://github.com/Geethx', label: 'GitHub' },
                                 { icon: <FiLinkedin />, href: 'https://www.linkedin.com/in/jeewan-geethanga-2a0b002a8', label: 'LinkedIn' },
@@ -60,9 +59,7 @@ const Footer = () => {
                                     href={s.href}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="w-10 h-10 sm:w-10 sm:h-10 flex items-center justify-center rounded-xl bg-surface-2 border border-glass-border
-                    text-slate-400 text-base sm:text-[1.05rem] transition-all duration-300
-                    hover:text-primary-400 hover:border-primary-500 hover:-translate-y-[3px]"
+                                    className="w-12 h-12 flex items-center justify-center border-2 border-brand-black bg-brand-white text-brand-black text-xl transition-all hover:bg-brand-black hover:text-brand-white hover:shadow-[4px_4px_0px_0px_var(--color-brand-neon)]"
                                     aria-label={s.label}
                                 >
                                     {s.icon}
@@ -73,13 +70,11 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom */}
-                <div className="flex flex-col sm:flex-row items-center justify-between py-4 sm:py-5 border-t border-glass-border gap-3 sm:gap-0">
-                    <p className="text-[0.8rem] sm:text-[0.85rem] text-slate-500 flex items-center gap-1">
-                        © {new Date().getFullYear()} Jeewan Geethanga.</p>
+                <div className="flex flex-col sm:flex-row items-center justify-between py-6 border-t-2 border-brand-black gap-4">
+                    <p className="font-mono text-sm font-bold uppercase text-brand-black">
+                        © {new Date().getFullYear()} JEEWAN GEETHANGA. ALL RIGHTS RESERVED.</p>
                     <button
-                        className="w-10 h-10 sm:w-10 sm:h-10 flex items-center justify-center rounded-full gradient-primary text-white text-base sm:text-lg
-              shadow-[0_4px_15px_rgba(99,102,241,0.3)] transition-all duration-300
-              hover:-translate-y-[3px] hover:shadow-[0_8px_25px_rgba(99,102,241,0.4)]"
+                        className="w-12 h-12 flex items-center justify-center border-2 border-brand-black bg-brand-neon text-brand-black text-xl transition-all hover:bg-brand-black hover:text-brand-neon hover:shadow-[4px_4px_0px_0px_var(--color-brand-white)]"
                         onClick={scrollToTop}
                         aria-label="Back to top"
                     >

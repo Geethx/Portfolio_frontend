@@ -20,62 +20,58 @@ const About = () => {
     const isInView = useInView(ref, { once: true, margin: '-100px' });
 
     return (
-        <section id="about" className="py-10 sm:py-14 md:py-18 lg:py-20 relative" ref={ref}>
-            <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <section id="about" className="py-16 sm:py-24 bg-brand-black border-b-2 border-brand-white relative" ref={ref}>
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
                 {/* Header */}
                 <motion.div
-                    className="text-center mb-8 sm:mb-10 md:mb-12"
+                    className="mb-12 sm:mb-16 border-b-2 border-brand-white pb-6"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="inline-block font-mono text-[0.7rem] sm:text-[0.75rem] font-medium text-primary-400 uppercase tracking-[2px] sm:tracking-[3px] mb-2 sm:mb-3 px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full">
-                        About Me
+                    <span className="inline-block font-mono text-sm font-bold text-brand-black bg-brand-neon uppercase tracking-widest mb-4 px-4 py-2 border-2 border-brand-white shadow-[4px_4px_0px_0px_#ffffff]">
+                        ABOUT ME
                     </span>
-                    <h2 className="text-[clamp(1.6rem,7vw,2.8rem)] font-extrabold text-gradient leading-tight mb-2 sm:mb-3">
-                        Who I Am
+                    <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-display font-bold text-brand-white leading-none uppercase">
+                        WHO I AM
                     </h2>
-                    <p className="text-[0.875rem] sm:text-[0.95rem] md:text-[1.05rem] text-slate-400 max-w-[600px] mx-auto leading-[1.6] sm:leading-[1.7] px-4 sm:px-2 md:px-0">
-                        A passionate developer turning ideas into elegant digital solutions
-                    </p>
                 </motion.div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-start">
                     {/* Text */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <h3 className="text-[1.4rem] sm:text-[1.6rem] md:text-[1.8rem] font-extrabold mb-4 sm:mb-5 leading-[1.3]">
-                            Crafting <span className="text-gradient">Digital Experiences</span> with Modern Tech
+                        <h3 className="text-[clamp(1.5rem,4vw,2.5rem)] font-display font-bold mb-6 leading-[1.2] uppercase">
+                            CRAFTING <span className="bg-brand-blue text-brand-white px-2">DIGITAL EXPERIENCES</span> WITH MODERN TECH
                         </h3>
-                        <p className="text-slate-400 mb-3 sm:mb-4 text-[0.9rem] sm:text-[0.98rem] leading-[1.7] sm:leading-[1.8]">
-                            I'm an IT undergraduate at the <strong className="text-slate-100 font-semibold">University of Moratuwa</strong> with
+                        <p className="font-mono text-brand-white mb-6 text-sm sm:text-base leading-relaxed uppercase border-l-4 border-brand-neon pl-4">
+                            I'm an IT undergraduate at the <strong className="text-brand-neon">University of Moratuwa</strong> with
                             a strong foundation in Software Development and expertise in Emerging Technologies.
                             I'm proficient in building full-stack applications and passionate about
-                            <strong className="text-slate-100 font-semibold"> Artificial Intelligence, Machine Learning, and DevOps</strong> to
+                            <strong className="text-brand-neon"> Artificial Intelligence, Machine Learning, and DevOps</strong> to
                             drive innovative solutions.
                         </p>
-                        <p className="text-slate-400 mb-3 sm:mb-4 text-[0.9rem] sm:text-[0.98rem] leading-[1.7] sm:leading-[1.8]">
+                        <p className="font-mono text-brand-white mb-8 text-sm sm:text-base leading-relaxed uppercase border-l-4 border-brand-neon pl-4">
                             With experience across academic projects, internships, and client projects, I've developed
                             responsive web applications, e-commerce platforms, Generative AI applications and IoT-based systems.
                         </p>
 
                         {/* Stats */}
-                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                             {stats.map((stat, i) => (
                                 <motion.div
                                     key={stat.label}
-                                    className="text-center p-4 sm:p-5 bg-surface-1 border border-glass-border rounded-xl
-                    transition-all duration-300 hover:border-primary-500 hover:bg-primary-500/5 hover:-translate-y-[3px]"
+                                    className="brutalist-card p-6 flex flex-col items-center justify-center brutalist-card-hover text-center"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ delay: 0.4 + i * 0.1 }}
                                 >
-                                    <span className="block text-[1.4rem] sm:text-[1.6rem] font-extrabold text-gradient mb-1">{stat.number}</span>
-                                    <span className="text-[0.7rem] sm:text-[0.78rem] text-slate-500 uppercase tracking-wider font-medium">{stat.label}</span>
+                                    <span className="block text-4xl sm:text-5xl font-display font-bold mb-2">{stat.number}</span>
+                                    <span className="font-mono text-sm uppercase tracking-widest font-bold">{stat.label}</span>
                                 </motion.div>
                             ))}
                         </div>
@@ -83,7 +79,7 @@ const About = () => {
 
                     {/* Highlight Cards */}
                     <motion.div
-                        className="flex flex-col gap-3 sm:gap-4"
+                        className="grid grid-cols-1 sm:grid-cols-2 gap-6"
                         initial={{ opacity: 0, x: 30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.3 }}
@@ -91,18 +87,17 @@ const About = () => {
                         {highlights.map((item, i) => (
                             <motion.div
                                 key={item.title}
-                                className="glass-card glass-card-hover flex items-center gap-3 sm:gap-4 p-4 sm:p-5 px-5 sm:px-6"
+                                className="brutalist-card flex flex-col gap-4 p-6 brutalist-card-hover group cursor-pointer"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ delay: 0.4 + i * 0.1 }}
-                                whileHover={{ scale: 1.02 }}
                             >
-                                <div className="w-11 h-11 sm:w-12 sm:h-12 min-w-[44px] sm:min-w-[48px] flex items-center justify-center bg-primary-500/10 border border-primary-500/20 rounded-xl text-primary-400 text-lg sm:text-xl">
+                                <div className="w-16 h-16 flex items-center justify-center bg-brand-black border-2 border-brand-white text-brand-white text-3xl group-hover:bg-brand-blue group-hover:text-brand-white group-hover:border-brand-blue transition-all">
                                     {item.icon}
                                 </div>
                                 <div>
-                                    <h4 className="text-[0.9rem] sm:text-[0.95rem] font-bold mb-0.5 sm:mb-1">{item.title}</h4>
-                                    <p className="text-[0.8rem] sm:text-[0.85rem] text-slate-400">{item.desc}</p>
+                                    <h4 className="font-display text-xl font-bold mb-2 uppercase">{item.title}</h4>
+                                    <p className="font-mono text-sm uppercase">{item.desc}</p>
                                 </div>
                             </motion.div>
                         ))}

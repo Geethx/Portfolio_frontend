@@ -13,7 +13,7 @@ const experiences = [
             'Collaborated with a team of developers',
         ],
         type: 'Full-time',
-        color: '#ef4444',
+        color: '#ff0000',
     },
     {
         role: 'Frontend Developer',
@@ -25,7 +25,7 @@ const experiences = [
             'Collaborated with cross-functional teams to deliver high-quality UI components',
         ],
         type: 'Full-time',
-        color: '#6366f1',
+        color: '#e0ef29',
     },
     {
         role: 'Banking Assistant (Internship)',
@@ -37,7 +37,7 @@ const experiences = [
             'Developed strong communication and customer service skills',
         ],
         type: 'Internship',
-        color: '#0ea5e9',
+        color: '#0505cb',
     },
     {
         role: 'Banking Assistant (Internship)',
@@ -49,7 +49,7 @@ const experiences = [
             'Built professional skills in a fast-paced banking environment',
         ],
         type: 'Internship',
-        color: '#10b981',
+        color: '#ffffff',
     },
 ];
 
@@ -58,68 +58,65 @@ const Experience = () => {
     const isInView = useInView(ref, { once: true, margin: '-100px' });
 
     return (
-        <section id="experience" className="py-10 sm:py-14 md:py-16 lg:py-20 relative" ref={ref}>
-            <div className="max-w-300 mx-auto px-4 sm:px-6">
+        <section id="experience" className="py-16 sm:py-24 bg-brand-black border-b-2 border-brand-white relative" ref={ref}>
+            <div className="max-w-[1000px] mx-auto px-4 sm:px-6">
                 {/* Header */}
                 <Motion.div
-                    className="text-center mb-8 sm:mb-10 md:mb-12"
+                    className="mb-12 sm:mb-16 border-b-2 border-brand-white pb-6 text-center lg:text-left"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="inline-block font-mono text-[0.7rem] sm:text-[0.75rem] font-medium text-primary-400 uppercase tracking-[2px] sm:tracking-[3px] mb-2 sm:mb-3 px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full">
-                        Career
+                    <span className="inline-block font-mono text-sm font-bold text-brand-black bg-brand-neon uppercase tracking-widest mb-4 px-4 py-2 border-2 border-brand-white shadow-[4px_4px_0px_0px_#ffffff]">
+                        CAREER
                     </span>
-                    <h2 className="text-[clamp(1.6rem,7vw,2.8rem)] font-extrabold text-gradient leading-tight mb-2 sm:mb-3">
-                        Professional Experience
+                    <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-display font-bold text-brand-white leading-none uppercase">
+                        EXPERIENCE
                     </h2>
-                    <p className="text-[0.875rem] sm:text-[0.95rem] md:text-[1.05rem] text-slate-400 max-w-150 mx-auto leading-[1.6] sm:leading-[1.7] px-4 sm:px-2 md:px-0">
-                        My journey through different roles and organizations
-                    </p>
                 </Motion.div>
 
                 {/* Timeline */}
-                <div className="relative max-w-200 mx-auto">
+                <div className="relative mx-auto">
                     {/* Timeline line */}
-                    <div className="absolute left-4 sm:left-5 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary-600 via-emerald-500 to-transparent" />
+                    <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-1 bg-brand-white hidden sm:block" />
 
                     {experiences.map((exp, i) => (
                         <Motion.div
                             key={`${exp.company}-${exp.role}`}
-                            className="relative pl-12 sm:pl-15 mb-8 sm:mb-10 last:mb-0"
-                            initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+                            className="relative sm:pl-20 mb-12 last:mb-0"
+                            initial={{ opacity: 0, x: -40 }}
                             animate={isInView ? { opacity: 1, x: 0 } : {}}
                             transition={{ delay: i * 0.2 }}
                         >
-                            {/* Dot */}
+                            {/* Square Node */}
                             <div
-                                className="absolute left-2.75 sm:left-3.25 top-6 sm:top-7 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full z-10 ring-2 ring-white/10"
-                                style={{ background: exp.color, boxShadow: `0 0 20px ${exp.color}44` }}
+                                className="absolute left-[1.15rem] sm:left-[1.65rem] top-8 w-6 h-6 border-4 border-brand-black hidden sm:block"
+                                style={{ background: exp.color }}
                             />
 
                             {/* Card */}
-                            <div className="glass-card glass-card-hover p-5 sm:p-6 md:p-7">
-                                <div className="flex items-center justify-between mb-2 sm:mb-3 flex-wrap gap-2">
+                            <div className="brutalist-card p-6 sm:p-8 brutalist-card-hover" style={{ borderLeftWidth: '8px', borderLeftColor: exp.color }}>
+                                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-4">
                                     <span
-                                        className="text-[0.7rem] sm:text-xs font-semibold uppercase tracking-wider px-2.5 sm:px-3 py-0.5 sm:py-1 border rounded-full"
-                                        style={{ color: exp.color, borderColor: `${exp.color}44` }}
+                                        className="font-mono text-xs font-bold uppercase tracking-widest px-3 py-1 border-2 bg-brand-black text-brand-white"
+                                        style={{ borderColor: exp.color }}
                                     >
                                         {exp.type}
                                     </span>
-                                    <span className="flex items-center gap-1 sm:gap-1.5 font-mono text-[0.75rem] sm:text-[0.8rem] text-slate-500">
-                                        <FiCalendar className="text-xs sm:text-sm" /> {exp.period}
+                                    <span className="flex items-center gap-2 font-mono text-xs uppercase font-bold border-2 border-brand-white px-3 py-1">
+                                        <FiCalendar className="text-sm" /> {exp.period}
                                     </span>
                                 </div>
 
-                                <h3 className="text-[1.05rem] sm:text-[1.2rem] font-bold mb-1 sm:mb-1.5">{exp.role}</h3>
-                                <p className="flex items-center gap-1 sm:gap-1.5 text-[0.85rem] sm:text-[0.9rem] font-semibold mb-3 sm:mb-4" style={{ color: exp.color }}>
-                                    <FiBriefcase className="text-sm sm:text-base" /> {exp.company}
+                                <h3 className="font-display text-2xl font-bold mb-2 uppercase">{exp.role}</h3>
+                                <p className="flex items-center gap-2 text-sm sm:text-base font-mono font-bold mb-6 uppercase" style={{ color: exp.color }}>
+                                    <FiBriefcase className="text-lg" /> {exp.company}
                                 </p>
 
-                                <ul className="flex flex-col gap-1.5 sm:gap-2">
+                                <ul className="flex flex-col gap-3">
                                     {exp.description.map((item, j) => (
-                                        <li key={j} className="flex items-start gap-2 sm:gap-2.5 text-[0.82rem] sm:text-[0.88rem] text-slate-400 leading-normal sm:leading-[1.6]">
-                                            <span className="w-1.5 h-1.5 min-w-1.5 rounded-full mt-1.5 sm:mt-2" style={{ background: exp.color }} />
+                                        <li key={j} className="flex items-start gap-3 text-sm sm:text-base font-mono uppercase leading-relaxed">
+                                            <span className="w-2 h-2 min-w-[8px] mt-2 border border-brand-white" style={{ background: exp.color }} />
                                             {item}
                                         </li>
                                     ))}

@@ -4,8 +4,6 @@ import { FiAward, FiCalendar } from 'react-icons/fi';
 import { GiGraduateCap } from "react-icons/gi";
 import { BiSolidSchool } from "react-icons/bi";
 
-
-
 const education = [
     {
         degree: 'B.Sc. (Hons) Degree in Information Technology & Management',
@@ -13,15 +11,15 @@ const education = [
         faculty: 'Faculty of Information Technology',
         period: '2023 - Present',
         icon: <GiGraduateCap />,
-        color: '#6366f1',
+        color: '#e0ef29',
         current: true,
     },
     {
         degree: 'Professional Certificate in Artificial Intelligence',
-        institution: 'Informatics Institute of Technology (IIT Campus)',
+        institution: 'Informatics Institute of Technology (IIT)',
         period: 'Sep 2025 - Dec 2025',
         icon: <FiAward />,
-        color: '#0ea5e9',
+        color: '#0505cb',
     },
     {
         degree: 'G.C.E. Advanced Level (2022)',
@@ -29,7 +27,7 @@ const education = [
         faculty: 'BBB - Physical Science Stream',
         period: '2018 - 2022',
         icon: <BiSolidSchool />,
-        color: '#10b981',
+        color: '#ff0000',
     },
 ];
 
@@ -38,62 +36,56 @@ const Education = () => {
     const isInView = useInView(ref, { once: true, margin: '-100px' });
 
     return (
-        <section id="education" className="py-10 sm:py-14 md:py-18 lg:py-20 relative" ref={ref}>
-            <div className="absolute w-[200px] sm:w-[250px] md:w-[350px] h-[200px] sm:h-[250px] md:h-[350px] rounded-full bg-accent-500 bottom-0 -left-[100px] sm:-left-[150px] blur-[80px] md:blur-[100px] opacity-15 pointer-events-none -z-1" />
-
-            <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        <section id="education" className="py-16 sm:py-24 bg-brand-black border-b-2 border-brand-white relative" ref={ref}>
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
                 {/* Header */}
                 <motion.div
-                    className="text-center mb-8 sm:mb-10 md:mb-12"
+                    className="mb-12 sm:mb-16 border-b-2 border-brand-white pb-6 text-center lg:text-left"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <span className="inline-block font-mono text-[0.7rem] sm:text-[0.75rem] font-medium text-primary-400 uppercase tracking-[2px] sm:tracking-[3px] mb-2 sm:mb-3 px-3 sm:px-4 py-1 sm:py-1.5 bg-primary-500/10 border border-primary-500/20 rounded-full">
-                        Education
+                    <span className="inline-block font-mono text-sm font-bold text-brand-white bg-brand-blue uppercase tracking-widest mb-4 px-4 py-2 border-2 border-brand-white shadow-[4px_4px_0px_0px_#ffffff]">
+                        EDUCATION
                     </span>
-                    <h2 className="text-[clamp(1.6rem,7vw,2.8rem)] font-extrabold text-gradient leading-tight mb-2 sm:mb-3">
-                        Academic Background
+                    <h2 className="text-[clamp(2.5rem,6vw,4rem)] font-display font-bold text-brand-white leading-none uppercase">
+                        ACADEMIC BACKGROUND
                     </h2>
-                    <p className="text-[0.875rem] sm:text-[0.95rem] md:text-[1.05rem] text-slate-400 max-w-[600px] mx-auto leading-[1.6] sm:leading-[1.7] px-4 sm:px-2 md:px-0">
-                        My educational journey and qualifications
-                    </p>
                 </motion.div>
 
                 {/* Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-[500px] sm:max-w-none mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {education.map((edu, i) => (
                         <motion.div
                             key={edu.degree}
-                            className="glass-card glass-card-hover p-6 sm:p-7 md:p-8 text-center relative overflow-hidden"
+                            className="brutalist-card p-6 sm:p-8 flex flex-col items-center text-center brutalist-card-hover group relative"
                             initial={{ opacity: 0, y: 30 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: i * 0.15 }}
-                            whileHover={{ y: -6 }}
                         >
                             {edu.current && (
-                                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 text-[0.65rem] sm:text-[0.7rem] font-semibold uppercase tracking-wider px-2.5 sm:px-3 py-0.5 sm:py-1 bg-primary-500/15 border border-primary-500/30 rounded-full text-primary-400">
-                                    Current
+                                <div className="absolute top-4 right-4 text-xs font-bold uppercase tracking-widest px-3 py-1 border-2 border-brand-white bg-brand-black text-brand-neon">
+                                    CURRENT
                                 </div>
                             )}
 
                             <div
-                                className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-2xl text-[1.2rem] sm:text-[1.4rem] mx-auto mb-4 sm:mb-5"
-                                style={{ background: `${edu.color}15`, color: edu.color, border: `1px solid ${edu.color}33` }}
+                                className="w-16 h-16 flex items-center justify-center border-2 border-brand-white text-3xl mb-6 bg-brand-black transition-colors group-hover:bg-brand-white"
+                                style={{ color: edu.color }}
                             >
                                 {edu.icon}
                             </div>
 
-                            <h3 className="text-[0.95rem] sm:text-[1.05rem] font-bold mb-1.5 sm:mb-2 leading-[1.4]">{edu.degree}</h3>
-                            <p className="text-[0.85rem] sm:text-[0.9rem] font-semibold mb-1" style={{ color: edu.color }}>
+                            <h3 className="font-display text-xl font-bold mb-4 uppercase leading-tight">{edu.degree}</h3>
+                            <p className="font-mono text-sm font-bold uppercase mb-2" style={{ color: edu.color }}>
                                 {edu.institution}
                             </p>
                             {edu.faculty && (
-                                <p className="text-[0.78rem] sm:text-[0.82rem] text-slate-400 mb-3 sm:mb-4 px-2">{edu.faculty}</p>
+                                <p className="font-mono text-xs uppercase mb-6">{edu.faculty}</p>
                             )}
 
-                            <div className="inline-flex items-center gap-1 sm:gap-1.5 font-mono text-[0.75rem] sm:text-[0.8rem] text-slate-500 px-3 sm:px-3.5 py-1 sm:py-1.5 bg-surface-1 rounded-full mt-3 sm:mt-4">
-                                <FiCalendar className="text-xs sm:text-sm" /> {edu.period}
+                            <div className="mt-auto inline-flex items-center gap-2 font-mono text-xs font-bold uppercase border-2 border-brand-white px-4 py-2 bg-brand-black text-brand-white group-hover:border-brand-black transition-colors">
+                                <FiCalendar className="text-sm" /> {edu.period}
                             </div>
                         </motion.div>
                     ))}
