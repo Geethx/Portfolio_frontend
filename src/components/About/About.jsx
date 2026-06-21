@@ -59,22 +59,27 @@ const About = () => {
                             With experience across academic projects, internships, and client projects, I've developed
                             responsive web applications, e-commerce platforms, Generative AI applications and IoT-based systems.
                         </p>
+                    </motion.div>
 
-                        {/* Stats */}
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                            {stats.map((stat, i) => (
-                                <motion.div
-                                    key={stat.label}
-                                    className="brutalist-card p-6 flex flex-col items-center justify-center brutalist-card-hover text-center"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                    transition={{ delay: 0.4 + i * 0.1 }}
-                                >
-                                    <span className="block text-4xl sm:text-5xl font-display font-bold mb-2">{stat.number}</span>
-                                    <span className="font-mono text-sm uppercase tracking-widest font-bold">{stat.label}</span>
-                                </motion.div>
-                            ))}
-                        </div>
+                    {/* Stats (Right Side) */}
+                    <motion.div
+                        className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 h-full"
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                    >
+                        {stats.map((stat, i) => (
+                            <motion.div
+                                key={stat.label}
+                                className="brutalist-card p-6 flex flex-col items-center justify-center brutalist-card-hover text-center h-full min-h-[140px]"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                                transition={{ delay: 0.4 + i * 0.1 }}
+                            >
+                                <span className="block text-4xl sm:text-5xl font-display font-bold mb-2">{stat.number}</span>
+                                <span className="font-mono text-sm uppercase tracking-widest font-bold">{stat.label}</span>
+                            </motion.div>
+                        ))}
                     </motion.div>
                 </div>
             </div>
